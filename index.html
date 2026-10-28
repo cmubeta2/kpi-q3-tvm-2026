@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Báo Cáo Hiệu Suất KPI Quý 3/2026 — Thanh Vũ Medic Cà Mau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN for interactive enterprise charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --surface-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --text-soft: #94a3b8;
+      
+      --brand-primary: #0284c7;
+      --brand-dark: #0369a1;
+      --brand-light: #e0f2fe;
+      --brand-accent: #0ea5e9;
+      
+      --success: #10b981;
+      --success-dark: #059669;
+      --success-bg: #ecfdf5;
+      --success-border: #a7f3d0;
+      
+      --warning: #f59e0b;
+      --warning-dark: #d97706;
+      --warning-bg: #fffbeb;
+      --warning-border: #fde68a;
+      
+      --danger: #ef4444;
+      --danger-dark: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    /* Triệt tiêu hoàn toàn cuộn ngang */
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden !important;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    /* Khung chứa thích ứng */
+    .app-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 14px 60px;
+    }
+
+    /* Executive Header */
+    .exec-header {
+      background: linear-gradient(135deg, #091e3a 0%, #0c4a6e 60%, #0284c7 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .exec-header::after {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .brand-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .brand-badge {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .report-date {
+      font-size: 12px;
+      opacity: 0.9;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(0, 0, 0, 0.15);
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+
+    .header-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .btn-action {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .btn-action:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+    .btn-action.btn-white {
+      background: #ffffff;
+      color: #0369a1;
+      border-color: #ffffff;
+    }
+
+    .header-title h1 {
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .header-title p {
+      font-size: clamp(13px, 2.5vw, 14px);
+      opacity: 0.9;
+      line-height: 1.5;
+      max-width: 900px;
+    }
+
+    /* Hàng số liệu cốt lõi trên Header */
+    .header-stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .header-stat-item {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .stat-label-subtle {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      opacity: 0.85;
+      font-weight: 600;
+    }
+    .stat-val-large {
+      font-size: clamp(22px, 5vw, 28px);
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+    .stat-val-note {
+      font-size: 11px;
+      opacity: 0.85;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .tag-growth {
+      background: #10b981;
+      color: #ffffff;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    /* Thanh Menu Tabs Tự Động Xuống Dòng (KHÔNG cuộn ngang) */
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--surface);
+      padding: 6px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--surface-border);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .tab-btn {
+      flex: 1 1 calc(33.333% - 6px);
+      min-width: 110px;
+      background: transparent;
+      border: 0;
+      padding: 9px 12px;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover {
+      color: var(--text-main);
+      background: var(--surface-subtle);
+    }
+    .tab-btn.active {
+      background: var(--brand-primary);
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(2, 132, 199, 0.25);
+    }
+
+    /* 4 Thẻ Trụ Cột BSC */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .pillar-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .pillar-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .pillar-weight {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--brand-dark);
+      background: var(--brand-light);
+      padding: 1px 7px;
+      border-radius: 9999px;
+    }
+    .pillar-score {
+      font-size: clamp(26px, 5vw, 32px);
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-main);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .pillar-progress-track {
+      width: 100%;
+      height: 6px;
+      background: var(--surface-subtle);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .pillar-progress-bar {
+      height: 100%;
+      border-radius: 9999px;
+    }
+    .bg-emerald { background: #10b981; }
+    .bg-sky { background: #0284c7; }
+    .bg-indigo { background: #6366f1; }
+    .bg-amber { background: #f59e0b; }
+
+    .pillar-footer {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: auto;
+      border-top: 1px dashed var(--surface-border);
+      padding-top: 8px;
+      line-height: 1.4;
+    }
+    .pillar-footer strong {
+      color: var(--text-main);
+    }
+
+    /* Khối nội dung */
+    .tab-content { display: none; width: 100%; }
+    .tab-content.active { display: block; animation: fadeIn 0.2s ease-in; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .card-title {
+      font-size: clamp(15px, 3.5vw, 17px);
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    .three-col-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      width: 100%;
+    }
+
+    /* Hộp Callout */
+    .callout {
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      width: 100%;
+    }
+    .callout-success {
+      background: var(--success-bg);
+      border: 1px solid var(--success-border);
+      color: #065f46;
+    }
+    .callout-warning {
+      background: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      color: #92400e;
+    }
+    .callout-info {
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      color: #075985;
+    }
+    .callout-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .callout-body h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .callout-body p {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* BẢNG DỮ LIỆU TỰ ĐỘNG CHUYỂN DẠNG THẺ TRÊN MOBILE (NO HORIZONTAL SCROLL) */
+    .table-container {
+      width: 100%;
+      background: var(--surface);
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    /* Desktop View */
+    @media (min-width: 769px) {
+      .table-container {
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--surface-border);
+        overflow: hidden;
+      }
+      table.data-table thead {
+        background: var(--surface-subtle);
+      }
+      table.data-table th {
+        padding: 10px 14px;
+        font-weight: 700;
+        color: var(--text-muted);
+        border-bottom: 1px solid var(--surface-border);
+        text-transform: uppercase;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+      }
+      table.data-table td {
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--surface-border);
+        color: var(--text-main);
+        vertical-align: middle;
+      }
+      table.data-table tbody tr:last-child td {
+        border-bottom: 0;
+      }
+      table.data-table tbody tr:hover {
+        background-color: #f8fafc;
+      }
+    }
+
+    /* Mobile View: Chuyển bảng thành danh sách Thẻ Độc Lập */
+    @media (max-width: 768px) {
+      table.data-table,
+      table.data-table thead,
+      table.data-table tbody,
+      table.data-table th,
+      table.data-table td,
+      table.data-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      table.data-table thead {
+        display: none !important; /* Ẩn tiêu đề cột kiểu bảng */
+      }
+
+      table.data-table tbody tr {
+        background: var(--surface);
+        border: 1px solid var(--surface-border);
+        border-radius: var(--radius-md);
+        padding: 14px;
+        margin-bottom: 12px;
+        box-shadow: var(--shadow-sm);
+      }
+
+      table.data-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        border-bottom: 1px dashed var(--surface-subtle);
+        font-size: 12px;
+        text-align: right;
+      }
+
+      table.data-table td:last-child {
+        border-bottom: 0;
+        padding-top: 8px;
+      }
+
+      /* Dòng tên chỉ tiêu ở đầu thẻ */
+      table.data-table td.td-title {
+        display: block;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--brand-dark);
+        border-bottom: 1px solid var(--surface-border);
+        padding-bottom: 8px;
+        margin-bottom: 6px;
+      }
+
+      /* Nhãn tự động từ data-label */
+      table.data-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--text-muted);
+        text-align: left;
+        padding-right: 8px;
+        font-size: 11px;
+        text-transform: uppercase;
+        flex-shrink: 0;
+      }
+
+      table.data-table td.td-title::before {
+        display: none;
+      }
+    }
+
+    .code-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: #334155;
+      font-size: 11px;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .status-badge.success {
+      background: var(--success-bg);
+      color: var(--success-dark);
+      border: 1px solid var(--success-border);
+    }
+    .status-badge.warning {
+      background: var(--warning-bg);
+      color: var(--warning-dark);
+      border: 1px solid var(--warning-border);
+    }
+
+    .num-col {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .filter-chip {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-chip:hover, .filter-chip.active {
+      background: var(--brand-light);
+      border-color: var(--brand-primary);
+      color: var(--brand-dark);
+    }
+
+    /* Action Checklist */
+    .rec-card {
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      margin-bottom: 12px;
+      background: var(--surface);
+      border-left: 4px solid var(--brand-primary);
+      width: 100%;
+    }
+    .rec-card.rec-priority {
+      border-left-color: var(--danger);
+    }
+    .rec-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .rec-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+    }
+    .rec-num {
+      background: var(--surface-subtle);
+      color: var(--text-main);
+      font-weight: 800;
+      font-size: 11px;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      display: inline-grid;
+      place-items: center;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+    .rec-badge {
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 700;
+      align-self: flex-start;
+    }
+    .rec-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--surface-border);
+    }
+
+    /* Chart Containers */
+    .chart-box {
+      width: 100%;
+      height: 250px;
+      position: relative;
+    }
+
+    /* Print Optimization */
+    @media print {
+      body { background: #ffffff; color: #000; font-size: 11px; }
+      .app-container { width: 100%; padding: 0; }
+      .tab-nav, .header-actions, .filter-bar, .no-print { display: none !important; }
+      .exec-header { background: #0c4a6e !important; color: #fff !important; padding: 16px !important; margin-bottom: 12px !important; }
+      .tab-content { display: block !important; page-break-after: always; }
+      .card { box-shadow: none !important; border: 1px solid #ccc !important; page-break-inside: avoid; }
+      .pillars-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 8px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- Executive Header -->
+    <header class="exec-header">
+      <div class="header-top">
+        <div class="brand-meta">
+          <span class="brand-badge">🏥 THANH VŨ MEDIC CÀ MAU</span>
+          <span class="report-date">Quý 3/2026</span>
+          <span class="report-date">Ban Kiểm Soát KPI</span>
+        </div>
+        <div class="header-actions no-print">
+          <button class="btn-action" onclick="window.print()">
+            🖨️ In / PDF
+          </button>
+          <button class="btn-action btn-white" onclick="copyExecutiveSummary()">
+            📋 Sao Chép
+          </button>
+        </div>
+      </div>
+
+      <div class="header-title">
+        <h1>BÁO CÁO KẾT QUẢ KPI TOÀN VIỆN QUÝ 3/2026</h1>
+        <p>Báo cáo quản trị chiến lược trình Ban Giám đốc & HĐQT — Đánh giá toàn diện 4 phương diện Thẻ điểm cân bằng (BSC), kiểm soát chi phí y tế và kế hoạch về đích AOP 2026.</p>
+      </div>
+
+      <div class="header-stats-row">
+        <div class="header-stat-item">
+          <span class="stat-label-subtle">Tổng Điểm KPI</span>
+          <div class="stat-val-large">99,40%</div>
+          <div class="stat-val-note">
+            <span class="tag-growth">↑ +4,2pp</span> Đạt đỉnh 2026
+          </div>
+        </div>
+
+        <div class="header-stat-item">
+          <span class="stat-label-subtle">Doanh Thu DVYT</span>
+          <div class="stat-val-large">17,71 <span style="font-size: 14px;">tỷ</span></div>
+          <div class="stat-val-note">Đạt 99,0% kế hoạch</div>
+        </div>
+
+        <div class="header-stat-item">
+          <span class="stat-label-subtle">Chi Phí Vật Tư (F2)</span>
+          <div class="stat-val-large" style="color: #6ee7b7;">13,00%</div>
+          <div class="stat-val-note">Kỷ lục thấp (Trần 14,5%)</div>
+        </div>
+
+        <div class="header-stat-item">
+          <span class="stat-label-subtle">Khoa Đạt Chuẩn</span>
+          <div class="stat-val-large">23 / 26</div>
+          <div class="stat-val-note">88,5% đạt KPI ≥ 90%</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 4 BSC Pillars Summary Cards -->
+    <section class="pillars-grid">
+      <!-- F -->
+      <div class="pillar-card">
+        <div class="pillar-head">
+          <span class="pillar-title">💰 F · Tài Chính</span>
+          <span class="pillar-weight">30%</span>
+        </div>
+        <div class="pillar-score">99,0%</div>
+        <div class="pillar-progress-track">
+          <div class="pillar-progress-bar bg-sky" style="width: 99%;"></div>
+        </div>
+        <div class="pillar-footer">
+          Đóng góp: <strong>29,7%</strong><br>
+          <span style="color: var(--success-dark); font-weight: 600;">Vật tư tối ưu: 13,00%</span>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="pillar-card">
+        <div class="pillar-head">
+          <span class="pillar-title">👥 C · Khách Hàng</span>
+          <span class="pillar-weight">20%</span>
+        </div>
+        <div class="pillar-score">99,0%</div>
+        <div class="pillar-progress-track">
+          <div class="pillar-progress-bar bg-emerald" style="width: 99%;"></div>
+        </div>
+        <div class="pillar-footer">
+          Đóng góp: <strong>19,8%</strong><br>
+          <span style="color: var(--brand-dark); font-weight: 600;">ARPU: 421.741đ (111%)</span>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="pillar-card">
+        <div class="pillar-head">
+          <span class="pillar-title">⚙️ B · Vận Hành</span>
+          <span class="pillar-weight">25%</span>
+        </div>
+        <div class="pillar-score">100,0%</div>
+        <div class="pillar-progress-track">
+          <div class="pillar-progress-bar bg-indigo" style="width: 100%;"></div>
+        </div>
+        <div class="pillar-footer">
+          Đóng góp: <strong>25,0%</strong><br>
+          <span style="color: var(--success-dark); font-weight: 600;">Phác đồ 99% · Ký số 80%</span>
+        </div>
+      </div>
+
+      <!-- L -->
+      <div class="pillar-card">
+        <div class="pillar-head">
+          <span class="pillar-title">🌱 L · Phát Triển</span>
+          <span class="pillar-weight">25%</span>
+        </div>
+        <div class="pillar-score">100,0%</div>
+        <div class="pillar-progress-track">
+          <div class="pillar-progress-bar bg-amber" style="width: 100%;"></div>
+        </div>
+        <div class="pillar-footer">
+          Đóng góp: <strong>25,0%</strong><br>
+          <span style="color: var(--warning-dark); font-weight: 600;">14 Đề án cải tiến (280%)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs (Tự động xuống dòng trên mobile) -->
+    <nav class="tab-nav no-print" role="tablist">
+      <button class="tab-btn active" onclick="switchTab('overview')">
+        📊 Tóm Tắt
+      </button>
+      <button class="tab-btn" onclick="switchTab('scorecard')">
+        🎯 17 Chỉ Tiêu BSC
+      </button>
+      <button class="tab-btn" onclick="switchTab('financial')">
+        💵 Chi Phí & DT
+      </button>
+      <button class="tab-btn" onclick="switchTab('outpatient')">
+        🩺 Ngoại Trú & ARPU
+      </button>
+      <button class="tab-btn" onclick="switchTab('departments')">
+        🏥 26 Khoa/Phòng
+      </button>
+      <button class="tab-btn" onclick="switchTab('actions')">
+        💡 Kiến Nghị BKS
+      </button>
+    </nav>
+
+    <!-- ==================== TAB 1: OVERVIEW ==================== -->
+    <div id="tab-overview" class="tab-content active">
+      
+      <!-- Highlights callouts -->
+      <div class="two-col-grid">
+        <div class="callout callout-success">
+          <div class="callout-icon">🏆</div>
+          <div class="callout-body">
+            <h4>Kỷ Lục Kiểm Soát Chi Phí Vật Tư (13,00%)</h4>
+            <p>Khắc phục sự cố vượt trần ở Quý 2. Chi phí vật tư hạ xuống 13,00% (so với trần 14,5%), là tỷ lệ thấp kỷ lục trong 4 năm qua.</p>
+          </div>
+        </div>
+
+        <div class="callout callout-info">
+          <div class="callout-icon">📈</div>
+          <div class="callout-body">
+            <h4>Chất Lượng Trên Từng Lượt Khám (ARPU: 421.741đ)</h4>
+            <p>Lượt khám đạt 88% nhưng doanh thu DVYT vẫn đạt 99% nhờ ARPU tăng 11% và Tái khám đúng hẹn đạt đỉnh 67,40%.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trend Chart & Summary Table -->
+      <div class="two-col-grid">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">📈 Xu Hướng Điểm KPI Qua 3 Quý</h3>
+              <p class="card-desc">Tăng trưởng vững chắc: 91,15% → 95,20% → 99,40%</p>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="kpiTrendChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">⚖️ So Sánh 4 Phương Diện BSC</h3>
+              <p class="card-desc">Điểm số và mức đóng góp thực tế</p>
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Phương diện</th>
+                  <th>Trọng số</th>
+                  <th>Q1</th>
+                  <th>Q2</th>
+                  <th>Q3</th>
+                  <th>Đóng góp</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-title">F – Tài chính</td>
+                  <td data-label="Trọng số" class="num-col">30%</td>
+                  <td data-label="Quý 1" class="num-col">73,0%</td>
+                  <td data-label="Quý 2" class="num-col">86,0%</td>
+                  <td data-label="Quý 3" class="num-col" style="color: var(--brand-dark); font-weight: 700;">99,0%</td>
+                  <td data-label="Đóng góp" class="num-col">29,7%</td>
+                </tr>
+                <tr>
+                  <td class="td-title">C – Khách hàng</td>
+                  <td data-label="Trọng số" class="num-col">20%</td>
+                  <td data-label="Quý 1" class="num-col">98,0%</td>
+                  <td data-label="Quý 2" class="num-col">97,0%</td>
+                  <td data-label="Quý 3" class="num-col" style="color: var(--brand-dark); font-weight: 700;">99,0%</td>
+                  <td data-label="Đóng góp" class="num-col">19,8%</td>
+                </tr>
+                <tr>
+                  <td class="td-title">B – Vận hành</td>
+                  <td data-label="Trọng số" class="num-col">25%</td>
+                  <td data-label="Quý 1" class="num-col">98,0%</td>
+                  <td data-label="Quý 2" class="num-col">100%</td>
+                  <td data-label="Quý 3" class="num-col" style="color: var(--success-dark); font-weight: 700;">100%</td>
+                  <td data-label="Đóng góp" class="num-col">25,0%</td>
+                </tr>
+                <tr>
+                  <td class="td-title">L – Phát triển</td>
+                  <td data-label="Trọng số" class="num-col">25%</td>
+                  <td data-label="Quý 1" class="num-col">100%</td>
+                  <td data-label="Quý 2" class="num-col">100%</td>
+                  <td data-label="Quý 3" class="num-col" style="color: var(--success-dark); font-weight: 700;">100%</td>
+                  <td data-label="Đóng góp" class="num-col">25,0%</td>
+                </tr>
+                <tr style="background: #f1f5f9; font-weight: 800;">
+                  <td class="td-title">TỔNG TOÀN VIỆN</td>
+                  <td data-label="Trọng số" class="num-col">100%</td>
+                  <td data-label="Quý 1" class="num-col">91,15%</td>
+                  <td data-label="Quý 2" class="num-col">95,20%</td>
+                  <td data-label="Quý 3" class="num-col" style="color: var(--brand-dark); font-size: 14px;">99,40%</td>
+                  <td data-label="Đóng góp" class="num-col" style="color: var(--brand-dark); font-size: 14px;">99,4%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Summary Box -->
+      <div class="card" style="background: linear-gradient(to right, #ffffff, #f0f9ff); border-left: 4px solid var(--brand-primary);">
+        <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 6px; color: #0369a1;">📋 Nhận Định Tóm Lược Của Thư Ký BKS</h4>
+        <p style="font-size: 13px; line-height: 1.6; color: #334155;">
+          Quý 3/2026 đạt kết quả vận hành tài chính và chuẩn hóa nội bộ toàn diện nhất. Nút thắt lớn nhất của Quý 2 về chi phí vật tư đã được tháo gỡ hoàn hảo khi giảm về mức 13,00%. Lợi nhuận trước thuế được bảo vệ vững chắc nhờ tổng 3 nhóm chi phí tiết kiệm hơn 1,07 tỷ đồng so với kế hoạch trần. Điểm cần tối ưu khi làm AOP 2027 là cân chỉnh chỉ tiêu Lượt khám ngoại trú (C1) về mức sát thị trường, đồng thời tăng độ phân hóa thang đo giữa các khoa/phòng.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ==================== TAB 2: SCORECARD ==================== -->
+    <div id="tab-scorecard" class="tab-content">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">🎯 Thẻ Điểm Cân Bằng Chi Tiết 17 Chỉ Tiêu Quý 3/2026</h3>
+            <p class="card-desc">Nguồn dữ liệu đối soát từ file TV3 Master Sheet</p>
+          </div>
+          <div class="filter-bar no-print">
+            <button class="filter-chip active" onclick="filterScorecard('all')">Tất cả (17)</button>
+            <button class="filter-chip" onclick="filterScorecard('F')">Tài chính (4)</button>
+            <button class="filter-chip" onclick="filterScorecard('C')">Khách hàng (4)</button>
+            <button class="filter-chip" onclick="filterScorecard('B')">Vận hành (5)</button>
+            <button class="filter-chip" onclick="filterScorecard('L')">Phát triển (4)</button>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table" id="scorecardTable">
+            <thead>
+              <tr>
+                <th>Mã</th>
+                <th>Tên Chỉ Tiêu</th>
+                <th>Nguồn / ĐVT</th>
+                <th>Trọng Số</th>
+                <th>Kế Hoạch</th>
+                <th>Thực Hiện</th>
+                <th>Hoàn Thành</th>
+                <th>Trạng Thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Group F -->
+              <tr data-group="F">
+                <td class="td-title"><span class="code-badge">F1</span> Doanh thu DVYT (không gồm thuốc)</td>
+                <td data-label="Mã & Nguồn">F1 · TCKT (Tỷ đồng)</td>
+                <td data-label="Trọng số" class="num-col">50%</td>
+                <td data-label="Kế hoạch" class="num-col">17,90 tỷ</td>
+                <td data-label="Thực hiện" class="num-col"><strong>17,71 tỷ</strong></td>
+                <td data-label="Hoàn thành" class="num-col">99,0%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Đạt 99%</span></td>
+              </tr>
+              <tr data-group="F">
+                <td class="td-title"><span class="code-badge">F2</span> Chi phí vật tư trực tiếp / DT DVYT</td>
+                <td data-label="Mã & Nguồn">F2 · TCKT (%)</td>
+                <td data-label="Trọng số" class="num-col">20%</td>
+                <td data-label="Kế hoạch" class="num-col">≤ 14,50%</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--success-dark); font-weight: 800;">13,00%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Kỷ lục (13,00%)</span></td>
+              </tr>
+              <tr data-group="F">
+                <td class="td-title"><span class="code-badge">F3</span> Chi phí vận hành / DT DVYT</td>
+                <td data-label="Mã & Nguồn">F3 · TCKT (%)</td>
+                <td data-label="Trọng số" class="num-col">10%</td>
+                <td data-label="Kế hoạch" class="num-col">≤ 8,10%</td>
+                <td data-label="Thực hiện" class="num-col">6,39%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Tiết kiệm 1,71pp</span></td>
+              </tr>
+              <tr data-group="F">
+                <td class="td-title"><span class="code-badge">F4</span> Chi phí lương, BHXH / DT DVYT</td>
+                <td data-label="Mã & Nguồn">F4 · TCKT (%)</td>
+                <td data-label="Trọng số" class="num-col">20%</td>
+                <td data-label="Kế hoạch" class="num-col">≤ 40,00%</td>
+                <td data-label="Thực hiện" class="num-col">37,16%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Tiết kiệm 2,84pp</span></td>
+              </tr>
+
+              <!-- Group C -->
+              <tr data-group="C">
+                <td class="td-title"><span class="code-badge">C1</span> Tổng lượt bệnh khám ngoại trú</td>
+                <td data-label="Mã & Nguồn">C1 · PTKH (Lượt)</td>
+                <td data-label="Trọng số" class="num-col">30%</td>
+                <td data-label="Kế hoạch" class="num-col">43.990</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--warning-dark); font-weight: 700;">38.719</td>
+                <td data-label="Hoàn thành" class="num-col">88,0%</td>
+                <td data-label="Trạng thái"><span class="status-badge warning">🟡 Chưa đạt KH</span></td>
+              </tr>
+              <tr data-group="C">
+                <td class="td-title"><span class="code-badge">C2</span> Tỷ lệ tái khám đúng hẹn (±7 ngày)</td>
+                <td data-label="Mã & Nguồn">C2 · PTKH (%)</td>
+                <td data-label="Trọng số" class="num-col">20%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 55,00%</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--success-dark); font-weight: 800;">67,40%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Vượt (+12,4pp)</span></td>
+              </tr>
+              <tr data-group="C">
+                <td class="td-title"><span class="code-badge">C3</span> Hài lòng trải nghiệm người bệnh (CSAT)</td>
+                <td data-label="Mã & Nguồn">C3 · PTKH (%)</td>
+                <td data-label="Trọng số" class="num-col">30%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 95,00%</td>
+                <td data-label="Thực hiện" class="num-col">96,70%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Vượt mục tiêu</span></td>
+              </tr>
+              <tr data-group="C">
+                <td class="td-title"><span class="code-badge">C4</span> Doanh thu bình quân/lượt khám (ARPU)</td>
+                <td data-label="Mã & Nguồn">C4 · PTKH (VNĐ)</td>
+                <td data-label="Trọng số" class="num-col">20%</td>
+                <td data-label="Kế hoạch" class="num-col">379.500đ</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--brand-dark); font-weight: 800;">421.741đ</td>
+                <td data-label="Hoàn thành" class="num-col">111,0%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Vượt (+42k/lượt)</span></td>
+              </tr>
+
+              <!-- Group B -->
+              <tr data-group="B">
+                <td class="td-title"><span class="code-badge">B1</span> Tỷ lệ tuân thủ phác đồ điều trị</td>
+                <td data-label="Mã & Nguồn">B1 · KHTH (%)</td>
+                <td data-label="Trọng số" class="num-col">20%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 95,00%</td>
+                <td data-label="Thực hiện" class="num-col">99,08%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Chuẩn 99%</span></td>
+              </tr>
+              <tr data-group="B">
+                <td class="td-title"><span class="code-badge">B2</span> Tuân thủ quy trình chuyên môn kỹ thuật</td>
+                <td data-label="Mã & Nguồn">B2 · KHTH (%)</td>
+                <td data-label="Trọng số" class="num-col">20%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 95,00%</td>
+                <td data-label="Thực hiện" class="num-col">100,0%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Tuyệt đối 100%</span></td>
+              </tr>
+              <tr data-group="B">
+                <td class="td-title"><span class="code-badge">B3</span> Tỷ lệ có chỉ định CLS trên lượt khám</td>
+                <td data-label="Mã & Nguồn">B3 · KHTH (%)</td>
+                <td data-label="Trọng số" class="num-col">25%</td>
+                <td data-label="Kế hoạch" class="num-col">65,00%</td>
+                <td data-label="Thực hiện" class="num-col">63,71%</td>
+                <td data-label="Hoàn thành" class="num-col">98,0%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Hợp lý lâm sàng</span></td>
+              </tr>
+              <tr data-group="B">
+                <td class="td-title"><span class="code-badge">B4</span> Tỷ lệ chỉ số chất lượng đạt mục tiêu</td>
+                <td data-label="Mã & Nguồn">B4 · KHTH (%)</td>
+                <td data-label="Trọng số" class="num-col">25%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 70,00%</td>
+                <td data-label="Thực hiện" class="num-col">95,00%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Vượt (+25pp)</span></td>
+              </tr>
+              <tr data-group="B">
+                <td class="td-title"><span class="code-badge">B5</span> Tỷ lệ hồ sơ/văn bản được ký số</td>
+                <td data-label="Mã & Nguồn">B5 · TCNS (%)</td>
+                <td data-label="Trọng số" class="num-col">10%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 80,00%</td>
+                <td data-label="Thực hiện" class="num-col">80,00%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Đạt chuẩn số hóa</span></td>
+              </tr>
+
+              <!-- Group L -->
+              <tr data-group="L">
+                <td class="td-title"><span class="code-badge">L1</span> Đề án cải tiến triển khai trước 30/09</td>
+                <td data-label="Mã & Nguồn">L1 · KHTH (Đề án)</td>
+                <td data-label="Trọng số" class="num-col">30%</td>
+                <td data-label="Kế hoạch" class="num-col">5 đề án</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--brand-dark); font-weight: 800;">14 đề án</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Vượt 280% KH</span></td>
+              </tr>
+              <tr data-group="L">
+                <td class="td-title"><span class="code-badge">L2</span> Kế hoạch phát triển chuyên môn</td>
+                <td data-label="Mã & Nguồn">L2 · TCNS (%)</td>
+                <td data-label="Trọng số" class="num-col">25%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 95,00%</td>
+                <td data-label="Thực hiện" class="num-col">100,0%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Đúng tiến độ</span></td>
+              </tr>
+              <tr data-group="L">
+                <td class="td-title"><span class="code-badge">L3</span> Kế hoạch đào tạo nội bộ</td>
+                <td data-label="Mã & Nguồn">L3 · TCNS (%)</td>
+                <td data-label="Trọng số" class="num-col">25%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 95,00%</td>
+                <td data-label="Thực hiện" class="num-col">100,0%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Đúng tiến độ</span></td>
+              </tr>
+              <tr data-group="L">
+                <td class="td-title"><span class="code-badge">L6</span> Hài lòng nhân viên (ESAT)</td>
+                <td data-label="Mã & Nguồn">L6 · TCNS (%)</td>
+                <td data-label="Trọng số" class="num-col">20%</td>
+                <td data-label="Kế hoạch" class="num-col">≥ 95,00%</td>
+                <td data-label="Thực hiện" class="num-col">96,00%</td>
+                <td data-label="Hoàn thành" class="num-col">100%</td>
+                <td data-label="Trạng thái"><span class="status-badge success">🟢 Vượt mục tiêu</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 3: FINANCIAL ==================== -->
+    <div id="tab-financial" class="tab-content">
+      <div class="two-col-grid">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">📉 Xu Hướng Chi Phí Vật Tư (2023 - 2026)</h3>
+              <p class="card-desc">Tỷ lệ vật tư / Doanh thu DVYT (F2)</p>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="materialCostChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">💰 Cơ Cấu Chi Phí vs Trần Ngân Sách</h3>
+              <p class="card-desc">Thực hiện Q3/2026 (% trên Doanh thu DVYT)</p>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="costComparisonChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title" style="margin-bottom: 12px;">📊 Bảng Đối Soát Chi Phí Quý 3/2026</h3>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Nhóm Chi Phí</th>
+                <th>Trần Ngân Sách</th>
+                <th>Thực Hiện Q3</th>
+                <th>Chênh Lệch</th>
+                <th>Đánh Giá</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-title">Chi phí vật tư trực tiếp (F2)</td>
+                <td data-label="Trần ngân sách" class="num-col">≤ 14,50%</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--success-dark); font-weight: 700;">13,00%</td>
+                <td data-label="Chênh lệch" class="num-col" style="color: var(--success-dark); font-weight: 700;">−1,50pp</td>
+                <td data-label="Đánh giá"><span class="status-badge success">Tiết kiệm kỷ lục</span></td>
+              </tr>
+              <tr>
+                <td class="td-title">Chi phí vận hành quản lý (F3)</td>
+                <td data-label="Trần ngân sách" class="num-col">≤ 8,10%</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--success-dark); font-weight: 700;">6,39%</td>
+                <td data-label="Chênh lệch" class="num-col" style="color: var(--success-dark); font-weight: 700;">−1,71pp</td>
+                <td data-label="Đánh giá"><span class="status-badge success">Tiết kiệm 1,71pp</span></td>
+              </tr>
+              <tr>
+                <td class="td-title">Chi phí lương, phụ cấp, BHXH (F4)</td>
+                <td data-label="Trần ngân sách" class="num-col">≤ 40,00%</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--success-dark); font-weight: 700;">37,16%</td>
+                <td data-label="Chênh lệch" class="num-col" style="color: var(--success-dark); font-weight: 700;">−2,84pp</td>
+                <td data-label="Đánh giá"><span class="status-badge success">Định mức tốt</span></td>
+              </tr>
+              <tr style="background: var(--surface-subtle); font-weight: 800;">
+                <td class="td-title">TỔNG BA KHOẢN CHI PHÍ</td>
+                <td data-label="Trần ngân sách" class="num-col">≤ 62,60%</td>
+                <td data-label="Thực hiện" class="num-col" style="color: var(--brand-dark); font-size: 14px;">56,55%</td>
+                <td data-label="Chênh lệch" class="num-col" style="color: var(--success-dark); font-size: 14px;">−6,05pp</td>
+                <td data-label="Đánh giá"><strong style="color: var(--success-dark);">Thặng dư +1,07 tỷ VNĐ</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 4: OUTPATIENT ==================== -->
+    <div id="tab-outpatient" class="tab-content">
+      <div class="two-col-grid">
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">🩺 Lượt Khám Ngoại Trú vs Kế Hoạch</h3>
+              <p class="card-desc">Sản lượng lượt khám 3 quý năm 2026</p>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="visitsChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title">💎 Tăng Trưởng ARPU (C4)</h3>
+              <p class="card-desc">Doanh thu bình quân / lượt khám (VNĐ)</p>
+            </div>
+          </div>
+          <div class="chart-box">
+            <canvas id="arpuChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 class="card-title" style="margin-bottom: 12px;">🔍 Phân Tích Chuyên Môn Quản Trị Bệnh Nhân</h3>
+        <div class="three-col-grid">
+          <div style="background: var(--surface-subtle); padding: 14px; border-radius: var(--radius-sm);">
+            <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">1. Tính Ổn Định Lượt Khám</h4>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+              Lượt khám duy trì ổn định 12.500 – 13.000 lượt/tháng (~38.7k/quý). Kế hoạch ban đầu 44k/quý đang cao hơn thực tế thị trường khoảng 12%.
+            </p>
+          </div>
+
+          <div style="background: var(--surface-subtle); padding: 14px; border-radius: var(--radius-sm);">
+            <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">2. Tỷ Lệ Tái Khám Đột Phá</h4>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+              Tái khám đúng hẹn đạt <strong>67,40%</strong> (vượt 12,4pp so với mục tiêu 55%). Bệnh nhân gắn kết cao với chuyên khoa bệnh mạn tính.
+            </p>
+          </div>
+
+          <div style="background: var(--surface-subtle); padding: 14px; border-radius: var(--radius-sm);">
+            <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 4px;">3. Tối Ưu Hóa Gói Dịch Vụ</h4>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.5;">
+              ARPU đạt 421.741đ (tăng 10,5% so với Q1). Tư vấn cận lâm sàng hợp lý (B3: 63,71%), nâng cao giá trị khám chữa bệnh.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 5: DEPARTMENTS ==================== -->
+    <div id="tab-departments" class="tab-content">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">🏥 Hiệu Suất 26 Khoa / Phòng Toàn Viện</h3>
+            <p class="card-desc">Đánh giá độ phủ chuẩn chất lượng KPI Quý 3/2026</p>
+          </div>
+          <div class="brand-badge" style="background: var(--success-bg); color: var(--success-dark); border-color: var(--success-border);">
+            23 / 26 Khoa/Phòng Đạt Chuẩn (≥90%)
+          </div>
+        </div>
+
+        <div class="three-col-grid" style="margin-bottom: 16px;">
+          <!-- Clinical -->
+          <div style="border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="font-size: 13px; font-weight: 700;">🩺 Khối Lâm Sàng (14 Khoa)</h4>
+              <span class="status-badge success">13/14 Đạt</span>
+            </div>
+            <ul style="list-style: none; font-size: 12px; color: var(--text-muted); line-height: 1.8;">
+              <li>✓ Khám Nội Tim Mạch: <strong>98,4%</strong></li>
+              <li>✓ Phòng Khám Nhi: <strong>96,8%</strong></li>
+              <li>✓ Khoa Khám Bệnh: <strong>94,2%</strong></li>
+              <li>✓ Phòng Cấp Cứu: <strong>93,5%</strong></li>
+              <li>✓ Khám Sản, Ngoại, TMH...</li>
+            </ul>
+          </div>
+
+          <!-- Paraclinical -->
+          <div style="border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="font-size: 13px; font-weight: 700;">🔬 Khối CLS & Dược (6 Khoa)</h4>
+              <span class="status-badge success">6/6 Đạt 100%</span>
+            </div>
+            <ul style="list-style: none; font-size: 12px; color: var(--text-muted); line-height: 1.8;">
+              <li>✓ Chẩn đoán hình ảnh: <strong>97,2%</strong></li>
+              <li>✓ Xét nghiệm: <strong>96,5%</strong></li>
+              <li>✓ Dược Lâm sàng: <strong>98,0%</strong></li>
+              <li>✓ Nhà thuốc & Dược BHYT: <strong>95,1%</strong></li>
+              <li>✓ Phòng Tiêm ngừa: <strong>94,8%</strong></li>
+            </ul>
+          </div>
+
+          <!-- Administrative -->
+          <div style="border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 14px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <h4 style="font-size: 13px; font-weight: 700;">🏢 Khối Quản Lý (6 Phòng)</h4>
+              <span class="status-badge success">4/6 Đạt</span>
+            </div>
+            <ul style="list-style: none; font-size: 12px; color: var(--text-muted); line-height: 1.8;">
+              <li>✓ Tài chính Kế toán: <strong>96,5%</strong></li>
+              <li>✓ Kế hoạch Tổng hợp: <strong>95,0%</strong></li>
+              <li>✓ Phòng CNTT: <strong>94,0%</strong></li>
+              <li>✓ TCNS & PTKH: <strong>92,5%</strong></li>
+              <li>⚠ 2 bộ phận phụ trợ cần rà soát</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <div class="callout-icon">💡</div>
+          <div class="callout-body">
+            <h4>Khuyến Nghị Phân Hóa Thang Đo AOP 2027</h4>
+            <p>Phương pháp đo nhị phân (Đạt / Không đạt) khiến 23/26 khoa đạt điểm rất cao (≥90%). BKS đề xuất đưa thang đo tuyến tính vào năm 2027 để tăng tính phân hóa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TAB 6: ACTIONS ==================== -->
+    <div id="tab-actions" class="tab-content">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <h3 class="card-title">💡 4 Kiến Nghị Trọng Tâm Của Ban Kiểm Soát</h3>
+            <p class="card-desc">Kế hoạch hành động cụ thể cho Quý 4/2026 và AOP 2027</p>
+          </div>
+        </div>
+
+        <!-- Rec 1 -->
+        <div class="rec-card rec-priority">
+          <div class="rec-header">
+            <div class="rec-title">
+              <span class="rec-num">1</span>
+              Kế Hoạch Về Đích Doanh Thu Q4 (Mục Tiêu ≥ 17,24 Tỷ)
+            </div>
+            <span class="rec-badge" style="background: var(--danger-bg); color: var(--danger-dark);">Ưu Tiên Số 1</span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-main); line-height: 1.5;">
+            Lũy kế 9 tháng đạt 51,56 tỷ VNĐ (75% KH năm). Quý 4 cần tối thiểu 17,24 tỷ để hoàn thành 68,8 tỷ của cả năm. PTKH và Khoa Khám cần đẩy mạnh khám sức khỏe doanh nghiệp cuối năm.
+          </p>
+          <div class="rec-meta">
+            <span><strong>Chủ trì:</strong> Phòng PTKH + Khoa Khám bệnh</span>
+            <span><strong>Thời hạn:</strong> Tháng 11/2026 · Mục tiêu: DT Q4 ≥ 17,24 tỷ</span>
+          </div>
+        </div>
+
+        <!-- Rec 2 -->
+        <div class="rec-card">
+          <div class="rec-header">
+            <div class="rec-title">
+              <span class="rec-num">2</span>
+              Chuẩn Hóa Định Mức Chi Phí Vật Tư Thành SOP
+            </div>
+            <span class="rec-badge" style="background: var(--success-bg); color: var(--success-dark);">Duy Trì Thành Quả</span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-main); line-height: 1.5;">
+            Thành công giảm vật tư về 13,00% cần quy chuẩn hóa thành định mức tiêu hao từng thủ thuật, tránh bị dội chi phí ngược trở lại trong mùa cao điểm cuối năm.
+          </p>
+          <div class="rec-meta">
+            <span><strong>Chủ trì:</strong> Phòng TCKT + Dược/Kho VT</span>
+            <span><strong>Thời hạn:</strong> Xuyên suốt Q4 · Mục tiêu: Vật tư Q4 ≤ 14,0%</span>
+          </div>
+        </div>
+
+        <!-- Rec 3 -->
+        <div class="rec-card">
+          <div class="rec-header">
+            <div class="rec-title">
+              <span class="rec-num">3</span>
+              Nghiệm Thu & Ứng Dụng 14 Đề Án Cải Tiến
+            </div>
+            <span class="rec-badge" style="background: var(--brand-light); color: var(--brand-dark);">Trải Nghiệm Bệnh Nhân</span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-main); line-height: 1.5;">
+            14 đề án hoàn thành đề cương (vượt 280% chỉ tiêu). KHTH cần đôn đốc chuyển giao ngay giải pháp rút ngắn thời gian chờ khám để người bệnh thụ hưởng ngay.
+          </p>
+          <div class="rec-meta">
+            <span><strong>Chủ trì:</strong> Phòng KHTH + Chủ nhiệm đề án</span>
+            <span><strong>Thời hạn:</strong> Trước 15/12/2026</span>
+          </div>
+        </div>
+
+        <!-- Rec 4 -->
+        <div class="rec-card">
+          <div class="rec-header">
+            <div class="rec-title">
+              <span class="rec-num">4</span>
+              Chuẩn Hóa Kế Hoạch AOP & Bộ KPI Năm 2027
+            </div>
+            <span class="rec-badge" style="background: var(--warning-bg); color: var(--warning-dark);">Đổi Mới Chiến Lược</span>
+          </div>
+          <p style="font-size: 12px; color: var(--text-main); line-height: 1.5;">
+            Điều chỉnh chỉ tiêu Lượt khám (C1) về mức khả thi thực tế (~39.000 – 40.000 lượt/quý), chuyển trọng tâm sang Tái khám và ARPU; nâng chuẩn phân hóa thi đua.
+          </p>
+          <div class="rec-meta">
+            <span><strong>Chủ trì:</strong> Ban Kiểm Soát KPI + TCKT + BGĐ</span>
+            <span><strong>Thời hạn:</strong> Tháng 12/2026</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Corporate Footer -->
+    <footer style="margin-top: 30px; text-align: center; font-size: 11px; color: var(--text-muted); border-top: 1px solid var(--surface-border); padding-top: 16px;">
+      <p><strong>Phòng khám Đa khoa Thanh Vũ Medic Cà Mau</strong> · Hệ Thống Báo Cáo Chiến Lược KPI 2026</p>
+      <p style="margin-top: 2px;">Biên soạn: Ban Kiểm Soát KPI · Thư ký BKS: Huỳnh Trường Thanh Tâm</p>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+      
+      const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick').includes(tabId));
+      if (activeBtn) activeBtn.classList.add('active');
+      
+      const targetContent = document.getElementById('tab-' + tabId);
+      if (targetContent) targetContent.classList.add('active');
+    }
+
+    function filterScorecard(group) {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      const rows = document.querySelectorAll('#scorecardTable tbody tr');
+      rows.forEach(r => {
+        if (group === 'all' || r.getAttribute('data-group') === group) {
+          r.style.display = '';
+        } else {
+          r.style.display = 'none';
+        }
+      });
+    }
+
+    function copyExecutiveSummary() {
+      const summaryText = `📊 BÁO CÁO KẾT QUẢ KPI QUÝ 3/2026 — THANH VŨ MEDIC CÀ MAU
+• Điểm KPI Toàn Viện: 99,40% (Đạt đỉnh: Q1 91,15% → Q2 95,20% → Q3 99,40%)
+• 4 Trụ BSC:
+  - F Tài chính: 99,0% (Vật tư giảm kỷ lục về 13,00%, thặng dư chi phí >1,07 tỷ)
+  - C Khách hàng: 99,0% (ARPU đạt 421.741đ; Tái khám đạt 67,40%)
+  - B Vận hành: 100,0% (Phác đồ 99,08%, Ký số 80%)
+  - L Phát triển: 100,0% (14 Đề án cải tiến - 280% KH)
+• Độ phủ: 23/26 khoa/phòng đạt KPI ≥ 90%.
+• Nguồn: Thư ký BKS Huỳnh Trường Thanh Tâm`;
+      
+      navigator.clipboard.writeText(summaryText).then(() => {
+        alert('Đã sao chép tóm tắt điều hành vào Clipboard!');
+      }).catch(err => {
+        console.error('Không thể sao chép:', err);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. KPI Trend
+      const ctxTrend = document.getElementById('kpiTrendChart');
+      if (ctxTrend) {
+        new Chart(ctxTrend, {
+          type: 'line',
+          data: {
+            labels: ['Q1/26', 'Q2/26', 'Q3/26'],
+            datasets: [
+              {
+                label: 'KPI (%)',
+                data: [91.15, 95.20, 99.40],
+                borderColor: '#0284c7',
+                backgroundColor: 'rgba(2, 132, 199, 0.1)',
+                fill: true,
+                tension: 0.35,
+                borderWidth: 3,
+                pointRadius: 5,
+                pointBackgroundColor: '#0284c7'
+              },
+              {
+                label: 'Chuẩn (90%)',
+                data: [90, 90, 90],
+                borderColor: '#ef4444',
+                borderDash: [5, 5],
+                borderWidth: 1.5,
+                pointRadius: 0
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { min: 85, max: 102, ticks: { callback: v => v + '%' } }
+            },
+            plugins: { legend: { position: 'bottom' } }
+          }
+        });
+      }
+
+      // 2. Material Cost
+      const ctxMat = document.getElementById('materialCostChart');
+      if (ctxMat) {
+        new Chart(ctxMat, {
+          type: 'bar',
+          data: {
+            labels: ['2023', '2024', '2025', 'Q2/26', 'Q3/26'],
+            datasets: [{
+              label: 'Vật tư (%)',
+              data: [18.53, 17.27, 14.97, 14.71, 13.00],
+              backgroundColor: ['#94a3b8', '#94a3b8', '#94a3b8', '#f59e0b', '#10b981'],
+              borderRadius: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { min: 10, max: 20, ticks: { callback: v => v + '%' } }
+            },
+            plugins: { legend: { display: false } }
+          }
+        });
+      }
+
+      // 3. Cost Comparison
+      const ctxCost = document.getElementById('costComparisonChart');
+      if (ctxCost) {
+        new Chart(ctxCost, {
+          type: 'bar',
+          data: {
+            labels: ['Vật tư (F2)', 'Vận hành (F3)', 'Lương (F4)', 'TỔNG 3 KHOẢN'],
+            datasets: [
+              {
+                label: 'Trần (%)',
+                data: [14.50, 8.10, 40.00, 62.60],
+                backgroundColor: '#cbd5e1',
+                borderRadius: 4
+              },
+              {
+                label: 'Thực tế (%)',
+                data: [13.00, 6.39, 37.16, 56.55],
+                backgroundColor: '#0284c7',
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { ticks: { callback: v => v + '%' } }
+            },
+            plugins: { legend: { position: 'bottom' } }
+          }
+        });
+      }
+
+      // 4. Visits
+      const ctxVisits = document.getElementById('visitsChart');
+      if (ctxVisits) {
+        new Chart(ctxVisits, {
+          type: 'bar',
+          data: {
+            labels: ['Q1/26', 'Q2/26', 'Q3/26'],
+            datasets: [
+              {
+                label: 'Kế Hoạch',
+                data: [41244, 43903, 43990],
+                backgroundColor: '#cbd5e1',
+                borderRadius: 4
+              },
+              {
+                label: 'Thực Hiện',
+                data: [36554, 39218, 38719],
+                backgroundColor: '#0ea5e9',
+                borderRadius: 4
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } }
+          }
+        });
+      }
+
+      // 5. ARPU
+      const ctxARPU = document.getElementById('arpuChart');
+      if (ctxARPU) {
+        new Chart(ctxARPU, {
+          type: 'line',
+          data: {
+            labels: ['Q1/26', 'Q2/26', 'Q3/26'],
+            datasets: [
+              {
+                label: 'ARPU (VNĐ)',
+                data: [381684, 405601, 421741],
+                borderColor: '#10b981',
+                backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                fill: true,
+                borderWidth: 3,
+                pointRadius: 5,
+                pointBackgroundColor: '#10b981'
+              },
+              {
+                label: 'KH (379.5k)',
+                data: [379500, 379500, 379500],
+                borderColor: '#f59e0b',
+                borderDash: [5, 5],
+                borderWidth: 1.5,
+                pointRadius: 0
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: { ticks: { callback: v => v.toLocaleString('vi-VN') + ' đ' } }
+            },
+            plugins: { legend: { position: 'bottom' } }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
