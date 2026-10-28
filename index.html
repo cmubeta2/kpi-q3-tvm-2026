@@ -1291,70 +1291,589 @@
     </div>
 
     <!-- ==================== TAB 5: DEPARTMENTS ==================== -->
+        <!-- ==================== TAB 5: DEPARTMENTS ==================== -->
     <div id="tab-departments" class="tab-content">
       <div class="card">
         <div class="card-head">
           <div>
-            <h3 class="card-title">🏥 Hiệu Suất 26 Khoa / Phòng Toàn Viện</h3>
-            <p class="card-desc">Đánh giá độ phủ chuẩn chất lượng KPI Quý 3/2026</p>
+            <h3 class="card-title">🏥 Bảng Đánh Giá Chi Tiết 26 Khoa / Phòng Toàn Viện</h3>
+            <p class="card-desc">Báo cáo hiệu suất theo quy chế hợp nhất 70% Khoa + 30% Phòng khám Quý 3/2026</p>
           </div>
           <div class="brand-badge" style="background: var(--success-bg); color: var(--success-dark); border-color: var(--success-border);">
-            23 / 26 Khoa/Phòng Đạt Chuẩn (≥90%)
+            23 / 26 Khoa Đạt Chuẩn (88,5%)
           </div>
         </div>
 
-        <div class="three-col-grid" style="margin-bottom: 16px;">
-          <!-- Clinical -->
-          <div style="border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 14px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="font-size: 13px; font-weight: 700;">🩺 Khối Lâm Sàng (14 Khoa)</h4>
-              <span class="status-badge success">13/14 Đạt</span>
-            </div>
-            <ul style="list-style: none; font-size: 12px; color: var(--text-muted); line-height: 1.8;">
-              <li>✓ Khám Nội Tim Mạch: <strong>98,4%</strong></li>
-              <li>✓ Phòng Khám Nhi: <strong>96,8%</strong></li>
-              <li>✓ Khoa Khám Bệnh: <strong>94,2%</strong></li>
-              <li>✓ Phòng Cấp Cứu: <strong>93,5%</strong></li>
-              <li>✓ Khám Sản, Ngoại, TMH...</li>
-            </ul>
+        <!-- 4 Thẻ KPI Tóm Tắt Khối -->
+        <div class="kpi-grid" style="margin-bottom: 20px;">
+          <div class="kpi-card">
+            <span class="kpi-label">Tổng Số Đơn Vị</span>
+            <div class="kpi-value">26</div>
+            <div class="kpi-subtext" style="color: var(--text-muted);">13 Lâm sàng · 5 CLS/Dược · 8 Gián tiếp</div>
           </div>
-
-          <!-- Paraclinical -->
-          <div style="border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 14px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="font-size: 13px; font-weight: 700;">🔬 Khối CLS & Dược (6 Khoa)</h4>
-              <span class="status-badge success">6/6 Đạt 100%</span>
-            </div>
-            <ul style="list-style: none; font-size: 12px; color: var(--text-muted); line-height: 1.8;">
-              <li>✓ Chẩn đoán hình ảnh: <strong>97,2%</strong></li>
-              <li>✓ Xét nghiệm: <strong>96,5%</strong></li>
-              <li>✓ Dược Lâm sàng: <strong>98,0%</strong></li>
-              <li>✓ Nhà thuốc & Dược BHYT: <strong>95,1%</strong></li>
-              <li>✓ Phòng Tiêm ngừa: <strong>94,8%</strong></li>
-            </ul>
+          <div class="kpi-card" style="border-left-color: var(--primary);">
+            <span class="kpi-label">Xếp Loại Xuất Sắc (≥95%)</span>
+            <div class="kpi-value" style="color: var(--primary);">17 <span style="font-size: 14px; font-weight: 500;">Khoa/Phòng</span></div>
+            <div class="kpi-subtext" style="color: var(--primary);">Chiếm 65,4% toàn viện</div>
           </div>
-
-          <!-- Administrative -->
-          <div style="border: 1px solid var(--surface-border); border-radius: var(--radius-sm); padding: 14px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <h4 style="font-size: 13px; font-weight: 700;">🏢 Khối Quản Lý (6 Phòng)</h4>
-              <span class="status-badge success">4/6 Đạt</span>
-            </div>
-            <ul style="list-style: none; font-size: 12px; color: var(--text-muted); line-height: 1.8;">
-              <li>✓ Tài chính Kế toán: <strong>96,5%</strong></li>
-              <li>✓ Kế hoạch Tổng hợp: <strong>95,0%</strong></li>
-              <li>✓ Phòng CNTT: <strong>94,0%</strong></li>
-              <li>✓ TCNS & PTKH: <strong>92,5%</strong></li>
-              <li>⚠ 2 bộ phận phụ trợ cần rà soát</li>
-            </ul>
+          <div class="kpi-card" style="border-left-color: #0284c7;">
+            <span class="kpi-label">Đạt Chuẩn (90% – 94,9%)</span>
+            <div class="kpi-value" style="color: #0284c7;">6 <span style="font-size: 14px; font-weight: 500;">Khoa/Phòng</span></div>
+            <div class="kpi-subtext" style="color: #0284c7;">Chiếm 23,1% toàn viện</div>
+          </div>
+          <div class="kpi-card" style="border-left-color: #f59e0b;">
+            <span class="kpi-label">Cần Rà Soát (<90%)</span>
+            <div class="kpi-value" style="color: #d97706;">3 <span style="font-size: 14px; font-weight: 500;">Bộ phận</span></div>
+            <div class="kpi-subtext" style="color: #d97706;">Ngoại, QTTN, Kế toán thu</div>
           </div>
         </div>
 
-        <div class="callout callout-warning">
-          <div class="callout-icon">💡</div>
+        <!-- Bộ Lọc Động & Ô Tìm Kiếm -->
+        <div class="no-print" style="margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between;">
+            <!-- Lọc theo Khối -->
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;" id="deptBlockFilters">
+              <button class="filter-chip active" onclick="filterDeptBlock('all', this)">Tất cả (26)</button>
+              <button class="filter-chip" onclick="filterDeptBlock('clinical', this)">🩺 Lâm sàng (13)</button>
+              <button class="filter-chip" onclick="filterDeptBlock('paraclinical', this)">🔬 CLS & Dược (5)</button>
+              <button class="filter-chip" onclick="filterDeptBlock('admin', this)">🏢 Gián tiếp (8)</button>
+            </div>
+            
+            <!-- Lọc theo Xếp loại -->
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;" id="deptRatingFilters">
+              <button class="filter-chip active" onclick="filterDeptRating('all', this)">Tất cả xếp loại</button>
+              <button class="filter-chip" onclick="filterDeptRating('excellent', this)">🟢 Xuất sắc (≥95%)</button>
+              <button class="filter-chip" onclick="filterDeptRating('good', this)">🔵 Đạt (90-94%)</button>
+              <button class="filter-chip" onclick="filterDeptRating('review', this)">🟡 Cần rà soát (<90%)</button>
+            </div>
+          </div>
+
+          <!-- Ô Tìm Kiếm Tức Thì -->
+          <div style="position: relative; width: 100%;">
+            <input type="text" id="deptSearchInput" onkeyup="searchDepartment()" placeholder="🔍 Gõ tên khoa/phòng để tìm nhanh (ví dụ: Nhi, Tim mạch, Xét nghiệm, TCKT...)" style="width: 100%; padding: 10px 14px; border: 1px solid var(--surface-border); border-radius: var(--radius-sm); font-size: 13px; font-family: inherit; outline: none; background: #f8fafc; transition: all 0.2s;" onfocus="this.style.background='#fff'; this.style.borderColor='var(--primary)';" onblur="this.style.background='#f8fafc'; this.style.borderColor='var(--surface-border)';">
+          </div>
+        </div>
+
+        <!-- Bảng Danh Sách 26 Khoa Phòng (Stacked Card trên Mobile) -->
+        <div class="table-container">
+          <table class="data-table" id="departmentsTable">
+            <thead>
+              <tr>
+                <th style="width: 45px; text-align: center;">STT</th>
+                <th>Khoa / Phòng & Trọng Tâm Đánh Giá</th>
+                <th style="width: 110px;">Khối</th>
+                <th style="width: 120px; text-align: right;">Điểm Khoa (70%)</th>
+                <th style="width: 110px; text-align: right;">Toàn Viện (30%)</th>
+                <th style="width: 140px; text-align: right;">Điểm Hợp Nhất</th>
+                <th style="width: 110px; text-align: center;">Xếp Loại</th>
+              </tr>
+            </thead>
+            <tbody>
+          <tr data-block="clinical" data-rating="excellent" data-name="phòng khám nội tim mạch">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">1</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Nội Tim Mạch</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Tái khám đúng hẹn 71,2% (vượt KH 55%); tuân thủ phác đồ điều trị 100%.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">98.40%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">98.70%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 98.7%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="excellent" data-name="phòng khám nhi">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">2</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Nhi</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Hài lòng người bệnh đạt 98,2%; tỷ lệ kê đơn an toàn tuyệt đối.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">96.80%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">97.58%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 97.58%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="excellent" data-name="khoa khám bệnh (tổng hợp)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">3</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Khoa Khám Bệnh (Tổng hợp)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Điều phối ngoại trú tốt; thời gian chờ khám giảm 14 phút/lượt.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">94.20%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">95.76%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 95.76%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="excellent" data-name="phòng khám cấp cứu">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">4</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Cấp Cứu</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">100% ca xử trí đúng quy trình cấp cứu; an toàn người bệnh 100%.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">93.50%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">95.27%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 95.27%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="excellent" data-name="phòng nội soi tiêu hóa">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">5</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Nội Soi Tiêu Hóa</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Chi phí vật tư đạt trần 12,33%; vô khuẩn ống soi đạt chuẩn 100%.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">94.50%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">95.97%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 95.97%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="good" data-name="phòng khám nội tiêu hóa">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">6</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Nội Tiêu Hóa</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Tỷ lệ chỉ định nội soi chẩn đoán đạt 68,5%; tái khám đạt 64%.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">93.10%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">94.99%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 94.99%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="good" data-name="phòng khám nội tiết">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">7</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Nội Tiết</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Quản lý bệnh mạn tính đái tháo đường vững; tái khám đúng hẹn 69%.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">92.80%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">94.78%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 94.78%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="good" data-name="phòng khám tai mũi họng">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">8</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Tai Mũi Họng</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Nội soi TMH đạt 78% lượt khám; thủ thuật tai mũi họng an toàn.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">92.00%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">94.22%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 94.22%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="good" data-name="phòng khám nội thần kinh">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">9</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Nội Thần Kinh</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Tối ưu hóa chỉ định MRI/CT đúng ca bệnh; CSAT đạt 96,5%.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">91.90%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">94.15%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 94.15%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="good" data-name="phòng tiêm ngừa">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">10</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Tiêm Ngừa</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">100% an toàn tiêm chủng; dây chuyền lạnh đạt chuẩn GSP/TCMR.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">91.50%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">93.87%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 93.87%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="good" data-name="phòng khám y học cổ truyền">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">11</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Y Học Cổ Truyền</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Tăng trưởng dịch vụ cấy chỉ, châm cứu và tập phục hồi chức năng.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">91.20%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">93.66%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 93.66%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="good" data-name="phòng khám sản - phụ khoa">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">12</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Sản - Phụ Khoa</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Lượt khám và DT hụt nhẹ; nhưng tuân thủ phác đồ & đề án cải tiến 100%.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">86.90%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">90.65%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 90.65%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="clinical" data-rating="review" data-name="phòng khám ngoại">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">13</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Khám Ngoại</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Lượt tiểu phẫu ngoại trú hụt nhẹ so với chỉ tiêu giao đầu năm.</div>
+            </td>
+            <td data-label="Khối">Lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">84.20%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #f59e0b;">88.76%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 88.76%; height: 100%; background: #f59e0b; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge warning">Cần rà soát</span>
+            </td>
+          </tr>
+          <tr data-block="paraclinical" data-rating="excellent" data-name="khoa chẩn đoán hình ảnh (cđha)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">14</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Khoa Chẩn Đoán Hình Ảnh (CĐHA)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">100% trả kết quả siêu âm, X-quang, CT đúng thời gian hẹn (TAT).</div>
+            </td>
+            <td data-label="Khối">Cận lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">97.20%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">97.86%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 97.86%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="paraclinical" data-rating="excellent" data-name="khoa xét nghiệm (pxn)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">15</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Khoa Xét Nghiệm (PXN)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Nội kiểm và ngoại kiểm đạt 100%; hao phí hóa chất giảm 1,4%.</div>
+            </td>
+            <td data-label="Khối">Cận lâm sàng</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">96.50%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">97.37%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 97.37%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="paraclinical" data-rating="excellent" data-name="tổ dược lâm sàng">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">16</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Tổ Dược Lâm Sàng</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Rà soát tương tác thuốc trên HIS 100%; hỗ trợ bác sĩ lâm sàng tốt.</div>
+            </td>
+            <td data-label="Khối">Dược</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">98.00%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">98.42%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 98.42%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="paraclinical" data-rating="excellent" data-name="kho dược bhyt">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">17</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Kho Dược BHYT</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Đảm bảo cung ứng 100% danh mục thuốc BHYT; tỷ lệ hao hụt bằng 0%.</div>
+            </td>
+            <td data-label="Khối">Dược</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">95.80%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">96.88%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 96.88%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="paraclinical" data-rating="excellent" data-name="nhà thuốc dịch vụ">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">18</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Nhà Thuốc Dịch Vụ</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Đạt chuẩn GPP; tư vấn sử dụng thuốc chu đáo; doanh thu đạt KH.</div>
+            </td>
+            <td data-label="Khối">Dược</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">94.60%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">96.04%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 96.04%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="excellent" data-name="phòng tài chính kế toán (tckt)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">19</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Tài Chính Kế Toán (TCKT)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Kiểm soát chi phí vật tư giảm kỷ lục về 13,00%; quyết toán đúng hạn.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">96.50%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">97.37%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 97.37%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="excellent" data-name="phòng kế hoạch tổng hợp (khth)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">20</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Kế Hoạch Tổng Hợp (KHTH)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Nghiệm thu 14 đề án cải tiến (vượt 280% KH); chất lượng đạt 95%.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">95.00%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">96.32%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 96.32%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="excellent" data-name="tổ công nghệ thông tin (cntt)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">21</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Tổ Công Nghệ Thông Tin (CNTT)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">HIS/LIS/PACS uptime 99,9%; hỗ trợ ký số văn bản đạt chuẩn 80%.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">94.00%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">95.62%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 95.62%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="excellent" data-name="phòng tổ chức nhân sự (ptcns)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">22</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Tổ Chức Nhân Sự (PTCNS)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Ký số văn bản 80%; hài lòng nhân viên 96%; đào tạo nội bộ 100%.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">93.80%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: var(--primary);">95.48%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 95.48%; height: 100%; background: var(--primary); border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge success">Xuất sắc</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="good" data-name="phòng phát triển khách hàng (ptkh)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">23</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Phát Triển Khách Hàng (PTKH)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Tái khám đạt 67,4%; CSAT đạt 96,7%; kết nối bệnh nhân qua Zalo OA.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">92.50%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">94.57%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 94.57%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="good" data-name="phòng bhyt & giám định">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">24</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng BHYT & Giám Định</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Tỷ lệ xuất toán BHYT dưới 0,15%; kiểm soát danh mục thẻ chính xác.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">91.00%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #0284c7;">93.52%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 93.52%; height: 100%; background: #0284c7; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge info">Đạt chuẩn</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="review" data-name="phòng quản trị tòa nhà (qttn)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">25</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Phòng Quản Trị Tòa Nhà (QTTN)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Chi phí sửa chữa điều hòa đột xuất làm nhỉnh chi phí vận hành riêng.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">85.50%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #f59e0b;">89.67%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 89.67%; height: 100%; background: #f59e0b; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge warning">Cần rà soát</span>
+            </td>
+          </tr>
+          <tr data-block="admin" data-rating="review" data-name="tổ kế toán thu (ktt)">
+            <td data-label="STT" style="font-weight: 700; color: var(--text-muted); text-align: center;">26</td>
+            <td data-label="Khoa / Phòng" style="font-weight: 700;">
+              <div>Tổ Kế Toán Thu (KTT)</div>
+              <div style="font-size: 11px; color: var(--text-muted); font-weight: 400; margin-top: 2px;">Tốc độ thanh toán hóa đơn điện tử giờ cao điểm sáng cần đẩy nhanh.</div>
+            </td>
+            <td data-label="Khối">Gián tiếp</td>
+            <td data-label="Điểm Khoa (70%)" style="text-align: right; font-weight: 600;">84.80%</td>
+            <td data-label="Điểm Viện (30%)" style="text-align: right; color: var(--text-muted);">99,40%</td>
+            <td data-label="Điểm Cuối (Hợp nhất)" style="text-align: right;">
+              <span style="font-weight: 800; font-size: 14px; color: #f59e0b;">89.18%</span>
+              <div style="width: 100%; max-width: 100px; height: 5px; background: #e2e8f0; border-radius: 3px; margin: 4px 0 0 auto; overflow: hidden;">
+                <div style="width: 89.18%; height: 100%; background: #f59e0b; border-radius: 3px;"></div>
+              </div>
+            </td>
+            <td data-label="Xếp loại" style="text-align: center;">
+              <span class="status-badge warning">Cần rà soát</span>
+            </td>
+          </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Ghi Chú Quy Chế & Nhận Định BKS -->
+        <div class="callout callout-info" style="margin-top: 16px;">
+          <div class="callout-icon">📌</div>
           <div class="callout-body">
-            <h4>Khuyến Nghị Phân Hóa Thang Đo AOP 2027</h4>
-            <p>Phương pháp đo nhị phân (Đạt / Không đạt) khiến 23/26 khoa đạt điểm rất cao (≥90%). BKS đề xuất đưa thang đo tuyến tính vào năm 2027 để tăng tính phân hóa.</p>
+            <h4>Quy Chế Tính Điểm TV3 & Khuyến Nghị Của Ban Kiểm Soát</h4>
+            <p><strong>Công thức tính:</strong> Điểm KPI cuối cùng = (70% × Điểm Khoa Tự Đạt) + (30% × Điểm Toàn Phòng Khám 99,40%). Quy chế này bảo đảm tính gắn kết giữa mục tiêu đơn vị và kết quả chung của toàn viện.</p>
+            <p style="margin-top: 6px;"><strong>Khuyến nghị AOP 2027:</strong> Do 23/26 khoa đạt điểm rất cao (≥90%), tính phân hóa giữa khoa xuất sắc và khoa hoàn thành bình thường chưa rõ nét. BKS đề xuất áp dụng thang đo tuyến tính (Continuous Scale) và nâng tiêu chí rào cản tài chính trong năm 2027.</p>
           </div>
         </div>
       </div>
@@ -1666,6 +2185,49 @@
         });
       }
     });
+  
+    let currentDeptBlock = 'all';
+    let currentDeptRating = 'all';
+
+    function filterDeptBlock(block, btn) {
+      currentDeptBlock = block;
+      document.querySelectorAll('#deptBlockFilters .filter-chip').forEach(c => c.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyDeptFilters();
+    }
+
+    function filterDeptRating(rating, btn) {
+      currentDeptRating = rating;
+      document.querySelectorAll('#deptRatingFilters .filter-chip').forEach(c => c.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyDeptFilters();
+    }
+
+    function searchDepartment() {
+      applyDeptFilters();
+    }
+
+    function applyDeptFilters() {
+      const query = (document.getElementById('deptSearchInput')?.value || '').trim().toLowerCase();
+      const rows = document.querySelectorAll('#departmentsTable tbody tr');
+      
+      rows.forEach(r => {
+        const block = r.getAttribute('data-block');
+        const rating = r.getAttribute('data-rating');
+        const name = (r.getAttribute('data-name') || '') + ' ' + (r.innerText || '').toLowerCase();
+        
+        const matchBlock = (currentDeptBlock === 'all' || block === currentDeptBlock);
+        const matchRating = (currentDeptRating === 'all' || rating === currentDeptRating);
+        const matchQuery = (!query || name.includes(query));
+        
+        if (matchBlock && matchRating && matchQuery) {
+          r.style.display = '';
+        } else {
+          r.style.display = 'none';
+        }
+      });
+    }
+
   </script>
 </body>
 </html>
